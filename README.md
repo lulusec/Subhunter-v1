@@ -5,15 +5,7 @@ Tento skript vykonáva pasívnu enumeráciu subdomén pre zadanú doménu pomoco
 
 ## API klúče
 Pre maximálny výkon odporúčam pridať API kľúče aspoň do jedného z týchto nástrojov – ideálne do Subfinderu, ktorý podporuje desiatky providerov a v prípade dostupných kľúčov výrazne zvyšuje pokrytie výsledkov.
-```
-nano /home/kali/.config/subfinder/provider-config.yaml
-```
-- odporúčame pridať:
-  - Virustotal API key
-  - dnsdumpster API key
-  - zoomeyeapi API key
-  - shodan API key
-  - chaos API key
+
 
 ## Inštalácia:
 ```
