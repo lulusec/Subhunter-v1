@@ -76,12 +76,12 @@ if [ "$USE_GOOGLE_DORKING" = true ]; then
 
     # Skontrolujeme, či venv existuje. Ak nie, vytvoríme ho a nainštalujeme závislosti.
     if [ ! -d "$VENV_DIR" ]; then
-        # Tieto správy sa zobrazia len raz, pri prvom spustení
-        echo -e "${YELLOW}[*] First time setup: Creating Python virtual environment...${NC}"
+        # Správy o prvotnom nastavení sú zakomentované, aby sa nezobrazovali.
+        # echo -e "${YELLOW}[*] First time setup: Creating Python virtual environment...${NC}"
         python3 -m venv "$VENV_DIR" > /dev/null 2>&1
-        echo -e "${YELLOW}[*] Installing dependencies (Selenium)...${NC}"
+        # echo -e "${YELLOW}[*] Installing dependencies (Selenium)...${NC}"
         "$VENV_DIR/bin/pip" install selenium > /dev/null 2>&1
-        echo -e "${GREEN}[*] Setup complete.${NC}"
+        # echo -e "${GREEN}[*] Setup complete.${NC}"
     fi
     
     if [[ -f "$SGOO_SCRIPT_PATH" && -x "$SGOO_SCRIPT_PATH" && -f "$PYTHON_BOT_PATH" ]]; then
@@ -101,6 +101,21 @@ run_and_count "amass enum -passive -d \"$DOMAIN\"" "Amass" "$TMP_DIR/amass.tmp"
 run_and_count "subfinder -d \"$DOMAIN\" -silent" "Subfinder" "$TMP_DIR/subfinder.tmp"
 run_and_count "findomain -t \"$DOMAIN\" -q" "Findomain" "$TMP_DIR/findomain.tmp"
 # ... ostatné tvoje príkazy ...
+run_and_count "(curl -s \"https://crt.sh/?q=%25.$DOMAIN&output=json\" | jq -r '.[].name_value' | sed 's/\\n/\n/g'; curl -s \"https://api.certspotter.com/v1/issuances?domain=$DOMAIN&include_subdomains=true&expand=dns_names\" | jq -r '.[].dns_names[]' | grep -iE \"\\.$DOMAIN$\")" "Cert Sources" "$TMP_DIR/certs.tmp"
+
+# ZMENA: Použitie spoľahlivého príkazu 'timeout'
+echo -e "${BLUE}[+] Running Internet Archives ${NC}"
+ARCHIVE_OUTFILE="$TMP_DIR/archives.tmp"
+ARCHIVE_CMD="(gau --threads 5 --subs \"$DOMAIN\"; waybackurls \"$DOMAIN\") | cut -d/ -f3 | sed 's/:.*//' | grep -iE \"\\.?$DOMAIN\$\" | sort -u"
+
+timeout 250s bash -c "$ARCHIVE_CMD" > "$ARCHIVE_OUTFILE" 2>/dev/null
+
+if [[ -s "$ARCHIVE_OUTFILE" ]]; then
+    count=$(wc -l < "$ARCHIVE_OUTFILE")
+else
+    count=0
+fi
+printf "${GREEN}[*] %-18s:${NC} %s\n" "Internet Archives" "$count"
 
 # --- Zjednotenie, filtrovanie a uloženie výsledkov ---
 echo -e "${BLUE}[+] Combining and filtering results...${NC}"
@@ -111,4 +126,3 @@ rm -rf -- "$TMP_DIR"
 echo ""
 echo -e "${GREEN}[*] Total unique and valid subdomains found:${NC} $FINALCOUNT"
 echo -e "${CYAN}[+] Subdomain enumeration completed. Results saved in ${YELLOW}$OUTFILE${NC}"
-                                                                                               
