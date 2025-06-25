@@ -3,11 +3,6 @@ Tento skript vykonáva pasívnu enumeráciu subdomén pre zadanú doménu pomoco
 
 ![SubHunter](https://github.com/user-attachments/assets/e9dfae2b-1816-4eed-982f-765ab5fbef45)
 
-## API klúče
-```
-python key_manager.py
-```
-
 ## Inštalácia:
 ```
 git clone https://github.com/lulusec/Subhunter-v1/
@@ -30,3 +25,8 @@ Options:
   -g            Use Google Dorking with auto-generated cookies (optional)
   -h            Show this help message
 ```
+## API klúče
+```
+python key_manager.py
+```
+![image](https://github.com/user-attachments/assets/66b18887-a851-4ec2-87b2-4539c54215cf)
