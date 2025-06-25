@@ -30,5 +30,5 @@ Options:
 python key_manager.py
 ```
 <p align="center">
- <img src="https://github.com/user-attachments/assets/bc99a933-b02d-4209-8786-55cdb603c30e" alt="image" width="400">
+ <img src="https://github.com/user-attachments/assets/bc99a933-b02d-4209-8786-55cdb603c30e" alt="image">
 </p>
