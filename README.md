@@ -18,7 +18,15 @@ bash install.sh
 ## Použitie:
 ```
 chmod +x SubHunter.sh
-bash SubHunter.sh -d example.com -g
+./SubHunter.sh -d example.com -g
 ```
 ## Help:
-![image](https://github.com/user-attachments/assets/cb8dde7d-78e5-4251-b677-dbe23ad495b5)
+```
+└─$ ./SubHunter.sh -h
+Usage: ./SubHunter.sh -d <domain> [-g]
+
+Options:
+  -d <domain>   Target domain to enumerate subdomains
+  -g            Use Google Dorking with auto-generated cookies (optional)
+  -h            Show this help message
+```
