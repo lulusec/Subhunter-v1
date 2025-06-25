@@ -20,5 +20,3 @@ bash install.sh
 bash SubHunter.sh -d example.com -g
 ```
 
-## Vysvetlivky:
-Na automatizovaný Google dorking sa používajú Google cookies v prepinači -c, aby sa minimalizovalo riziko blokácie a zabezpečila plynulá interakcia so službami vyhľadávania.
