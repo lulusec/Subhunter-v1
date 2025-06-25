@@ -22,7 +22,7 @@ chmod +x SubHunter.sh
 | Flag | Description                                         | Example                          |
 |------|-----------------------------------------------------|----------------------------------|
 | -d   | Target domain to enumerate subdomains               | `./SubHunter.sh -d example.com`  |
-| -g   | Use Google Dorking with auto-generated cookies      | `./SubHunter.sh -g`              |
+| -g   | Use Google Dorking with auto-generated cookies      | `./SubHunter.sh -d example.com -g`              |
 | -h   | Show this help message                              | `./SubHunter.sh -h`              |
 
 ## API klúče
