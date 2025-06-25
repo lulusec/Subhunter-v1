@@ -88,7 +88,7 @@ FONT_SECTION = ("Consolas", 16, "bold")
 FONT_NORMAL = ("Consolas", 12)
 
 root = tk.Tk()
-root.title("API Key Manager for Subfinder")
+root.title("API Key Manager")
 root.geometry("800x750")
 root.configure(bg=BG_COLOR)
 
