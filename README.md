@@ -9,15 +9,11 @@ Pre maximálny výkon odporúčam pridať API kľúče aspoň do jedného z týc
 
 ## Inštalácia:
 ```
-git clone https://github.com/lulusec/SubHunter/
-cd Subhunter
-sudo bash install.sh
-chmod +x SubHunter.sh
+
 ```
 ## Použitie:
 ```
-./SubHunter.sh -h
-./SubHunter.sh -d example.com -c "Cookie: AEC=123dsa456; GTB=123.dsa"
+
 ```
 
 ## Vysvetlivky:
