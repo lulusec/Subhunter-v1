@@ -18,13 +18,13 @@ chmod +x SubHunter.sh
 ## Help:
 ```
 └─$ ./SubHunter.sh -h
+```
 | Flag | Description                                         | Example                          |
 |------|-----------------------------------------------------|----------------------------------|
 | -d   | Target domain to enumerate subdomains               | `./SubHunter.sh -d example.com`  |
 | -g   | Use Google Dorking with auto-generated cookies      | `./SubHunter.sh -g`              |
 | -h   | Show this help message                              | `./SubHunter.sh -h`              |
 
-```
 ## API klúče
 ```
 python key_manager.py
