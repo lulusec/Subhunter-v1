@@ -4,16 +4,20 @@ Tento skript vykonáva pasívnu enumeráciu subdomén pre zadanú doménu pomoco
 ![SubHunter](https://github.com/user-attachments/assets/e9dfae2b-1816-4eed-982f-765ab5fbef45)
 
 ## API klúče
-
+```
+python key_manager.py
+```
 
 
 ## Inštalácia:
 ```
-
+git clone https://github.com/lulusec/Subhunter-v1/
+cd Subhunter-v1
+bash install.sh
 ```
 ## Použitie:
 ```
-
+bash SubHunter.sh -d example.com -g
 ```
 
 ## Vysvetlivky:
