@@ -23,7 +23,7 @@ chmod +x SubHunter.sh
 ## Help:
 ```
 └─$ ./SubHunter.sh -h
-Usage: ./SubHunter.sh -d <domain> [-g]
+Usage: ./SubHunter.sh -d example.com -g
 
 Options:
   -d <domain>   Target domain to enumerate subdomains
