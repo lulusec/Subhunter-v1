@@ -18,12 +18,12 @@ chmod +x SubHunter.sh
 ## Help:
 ```
 └─$ ./SubHunter.sh -h
-Usage: ./SubHunter.sh -d example.com -g
+| Flag | Description                                         | Example                          |
+|------|-----------------------------------------------------|----------------------------------|
+| -d   | Target domain to enumerate subdomains               | `./SubHunter.sh -d example.com`  |
+| -g   | Use Google Dorking with auto-generated cookies      | `./SubHunter.sh -g`              |
+| -h   | Show this help message                              | `./SubHunter.sh -h`              |
 
-Options:
-  -d <domain>   Target domain to enumerate subdomains
-  -g            Use Google Dorking with auto-generated cookies (optional)
-  -h            Show this help message
 ```
 ## API klúče
 ```
