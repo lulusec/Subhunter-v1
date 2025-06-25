@@ -4,7 +4,7 @@ Tento skript vykonáva pasívnu enumeráciu subdomén pre zadanú doménu pomoco
 ![SubHunter](https://github.com/user-attachments/assets/e9dfae2b-1816-4eed-982f-765ab5fbef45)
 
 ## API klúče
-Pre maximálny výkon odporúčam pridať API kľúče aspoň do jedného z týchto nástrojov – ideálne do Subfinderu, ktorý podporuje desiatky providerov a v prípade dostupných kľúčov výrazne zvyšuje pokrytie výsledkov.
+
 
 
 ## Inštalácia:
